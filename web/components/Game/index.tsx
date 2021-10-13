@@ -14,7 +14,7 @@ import Game from './GameRenderer';
 // const Stage = dynamic(() => import('./PixiGameRender'), { ssr: false });
 
 const Room: FC<{ id: string }> = ({ id }) => {
-  const { data } = useApi(`https://${process.env.API_DOMAIN ?? 'api.sonargr.am'}/?id=${id}`);
+  const { data } = useApi(`https://${process.env.API_DOMAIN ?? 'api-pio8.onrender.com'}/?id=${id}`);
   const { isIos } = useGetMobilePlatform();
 
   if (!data) return null;
