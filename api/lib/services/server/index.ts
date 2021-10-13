@@ -26,10 +26,6 @@ server.get<any>('/', async (request, response) => {
   const id = request.query.id;
   const internalRoomId = await getRoomIdFromUrlCode(id) || await getRoomIdFromUrlSlug(id); 
 
-  // if (id !== 'zen-garden') {
-  //   return 0;
-  // }
-
   if (!internalRoomId) {
     response.code(404);
     return { error: 'Not found' };

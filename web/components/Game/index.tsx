@@ -8,15 +8,13 @@ import { FlexBox, Text, Button } from 'components/@basic';
 import Page from 'components/Page';
 import Game from './GameRenderer';
 
-import exportImage from 'react-component-export-image';
-
-import Cloudflare from 'cloudflare';
+// import exportImage from 'react-component-export-image';
 
 // import dynamic from 'next/dynamic';
 // const Stage = dynamic(() => import('./PixiGameRender'), { ssr: false });
 
 const Room: FC<{ id: string }> = ({ id }) => {
-  const { data } = useApi('https://api.sonargr.am/?id=' + id);
+  const { data } = useApi(`https://${process.env.API_DOMAIN ?? 'api.sonargr.am'}/?id=${id}`);
   const { isIos } = useGetMobilePlatform();
 
   if (!data) return null;
