@@ -10,9 +10,9 @@ const UUID_NAMESPACE = '092020d1-f397-5954-b5c0-77d07b10d044';
 
 const nanoid = customAlphabet('256789bcdfglmnpqrstvwyz', 4);
 
-const connectionString = process.env.REDISCLOUD_URL;
-
-const redis = new Redis(connectionString, {
+const redis = new Redis({
+  host: process.env.REDIS_HOST,
+  port: Number(process.env.REDIS_PORT),
   keepAlive: 1,
   showFriendlyErrorStack: process.env.NODE_ENV !== 'production',
   reconnectOnError: () => true,
@@ -26,14 +26,13 @@ redis.on('end', async () => {
 async function saveRoomData(internalRoomId: string, data: any) {
   const key = `room:${internalRoomId}`;
 
-  // Nvm, remove data
-  try {
-    const numSaves = await redis.llen(key);
-    if (numSaves >= 4) {
-      await redis.rpop(key);
-      await redis.rpop(key);
-    }
-  } catch {}
+  // try {
+  //   const numSaves = await redis.llen(key);
+  //   if (numSaves >= 4) {
+  //     await redis.rpop(key);
+  //     await redis.rpop(key);
+  //   }
+  // } catch {}
 
   await redis.rpush(key, JSON.stringify(data));
 }
@@ -43,10 +42,7 @@ async function loadRoomData(internalRoomId: string, id = -1) {
 
   let data: any = await redis.lindex(key, id);
 
-  // Compress any remaining JSON
   if (isJSON(data)) {
-    // const compressed = compress(data);
-    // redis.lset(key, id, compressed);
     return JSON.parse(data);
   }
 
