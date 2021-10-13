@@ -1,0 +1,9 @@
+{
+  "endOfLine": "lf",
+  "arrowParens": "avoid",
+  "trailingComma": "all",
+  "printWidth": 100,
+  "quoteProps": "consistent",
+  "semi": true,
+  "singleQuote": true
+}

@@ -1,0 +1,46 @@
+{
+  "name": "sonargram-api",
+  "version": "0.1.5",
+  "main": "build/bot",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": "16.x.x"
+  },
+  "scripts": {
+    "build": "yarn tsc",
+    "test": "jest ./lib --detectOpenHandles",
+    "bot": "node build/services/bot",
+    "server": "node build/services/server"
+  },
+  "dependencies": {
+    "2d-array-rotation": "2.1.1",
+    "@sonar-tools/sonar.js": "0.1.0-alpha.16",
+    "@types/lodash": "^4.14.168",
+    "cloudflare": "2.7.x",
+    "compress-brotli": "^1.3.0",
+    "fastify": "3.14.x",
+    "fastify-cors": "5.x.x",
+    "ioredis": "4.25.x",
+    "is-json": "^2.0.1",
+    "lodash": "^4.17.21",
+    "nanoid": "^3.1.22",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.7",
+    "ts-patch": "^1.3.2",
+    "typescript-transform-paths": "^2.2.3",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/cloudflare": "2.7.1",
+    "@types/ioredis": "^4.22.0",
+    "@types/jest": "^26.0.20",
+    "@types/nanoid": "^2.1.0",
+    "@types/node": "^14.14.33",
+    "@types/node-fetch": "^2.5.8",
+    "@types/uuid": "^8.3.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.3",
+    "typescript": "4.2.x"
+  }
+}

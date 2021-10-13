@@ -1,0 +1,29 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "DIN Next Rounded", sans-serif;
+  background: #000;
+  color: #fefefe;
+  user-select: none;
+  /* cursor: pointer; */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "DIN Next Rounded";
+  src: url('/assets/fonts/DINNextRoundedLTPro-Medium.otf');
+  font-weight: medium;
+}
+@font-face {
+  font-family: "DIN Next Rounded Regular";
+  src: url('/assets/fonts/DINNextRoundedLTPro-Regular.otf');
+  font-weight: unset;
+}

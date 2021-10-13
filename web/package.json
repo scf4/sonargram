@@ -1,0 +1,48 @@
+{
+  "name": "sonargram-web",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "16.x.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p $PORT"
+  },
+  "dependencies": {
+    "@emotion/react": "11.1.x",
+    "@emotion/styled": "^11.1.5",
+    "@inlet/react-pixi": "6.3.x",
+    "@styled-system/should-forward-prop": "^5.1.5",
+    "@types/cloudflare": "^2.7.1",
+    "next": "10.x.x",
+    "next-images": "^1.7.0",
+    "node-fetch": "^2.6.1",
+    "pixi.js": "^6.0.0",
+    "react": "17.x.x",
+    "react-component-export-image": "^1.0.5",
+    "react-dom": "17.x.x",
+    "react-spring": "^9.0.0-rc.3",
+    "styled-system": "5.1.5",
+    "swr": "^0.5.4"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.2.0",
+    "@types/node": ">= 14",
+    "@types/react": "17.x.x",
+    "@types/styled-system": "5.1.x",
+    "@types/styled-system__should-forward-prop": "^5.1.2",
+    "@typescript-eslint/eslint-plugin": "4.x.x",
+    "@typescript-eslint/parser": "4.x.x",
+    "eslint": "7.22.x",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "typescript": "4.x.x"
+  },
+  "resolutions": {
+    "sharp": "0.27.2",
+    "webpack": "^5.0.0-beta.30"
+  }
+}
